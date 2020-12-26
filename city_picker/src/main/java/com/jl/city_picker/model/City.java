@@ -17,7 +17,7 @@ public class City {
     private String province;
     //城市拼音
     private String pinyin;
-    //城市码
+    //城市码（暂时未使用）
     private String code;
 
     public City(String name, String province, String pinyin, String code) {
