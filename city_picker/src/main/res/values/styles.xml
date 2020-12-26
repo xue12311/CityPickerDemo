@@ -1,0 +1,90 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/cp_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/cp_colorPrimaryDark</item>
+        <item name="colorAccent">@color/cp_colorAccent</item>
+    </style>
+
+    <style name="CityPickerStyle" parent="AlertDialog.AppCompat">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="DefaultCityPickerAnimation" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/cp_push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/cp_push_bottom_out</item>
+    </style>
+
+    <style name="DefaultCityPickerTheme" parent="AppTheme">
+        <!--取消搜索按钮 文字大小-->
+        <item name="cpCancelTextSize">@dimen/cp_cancel_text_size</item>
+        <!--取消搜索按钮 文字颜色-->
+        <item name="cpCancelTextColor">@color/cp_color_gray</item>
+        <!--删除搜索框内容的图标-->
+        <item name="cpClearTextIcon">@drawable/cp_icon_clear_all</item>
+        <!--搜索框 文字大小-->
+        <item name="cpSearchTextSize">@dimen/cp_search_text_size</item>
+        <!--搜索框 文字颜色-->
+        <item name="cpSearchTextColor">@color/cp_color_gray_dark</item>
+        <!--搜索框 提示信息-->
+        <item name="cpSearchHintText">@string/cp_search_hint_text</item>
+        <!--搜索框 提示文字颜色-->
+        <item name="cpSearchHintTextColor">@color/cp_color_gray_light</item>
+        <!--搜索框 光标颜色-->
+        <item name="cpSearchCursorDrawable">@color/cp_color_gray_dark</item>
+        <!--城市列表item 高度-->
+        <item name="cpListItemHeight">@dimen/cp_list_item_height</item>
+        <!--城市列表item 文字大小-->
+        <item name="cpListItemTextSize">@dimen/cp_list_item_text_size</item>
+        <!--城市列表item 文字颜色-->
+        <item name="cpListItemTextColor">@color/cp_color_gray_deep</item>
+        <!--空布局-->
+        <!--空布局 图标-->
+        <item name="cpEmptyIcon">@drawable/cp_icon_empty</item>
+        <!--空布局 图标宽度-->
+        <item name="cpEmptyIconWidth">@dimen/cp_empty_icon_width</item>
+        <!--空布局 图标高度-->
+        <item name="cpEmptyIconHeight">@dimen/cp_empty_icon_height</item>
+        <!--空布局 文本内容-->
+        <item name="cpEmptyText">@string/cp_no_result</item>
+        <!--空布局 文字大小-->
+        <item name="cpEmptyTextSize">@dimen/cp_empty_text_size</item>
+        <!--空布局 文字颜色-->
+        <item name="cpEmptyTextColor">@color/cp_color_gray_deep</item>
+
+        <!--网格布局（定位城市，热门城市）item 背景颜色-->
+        <item name="cpGridItemBackground">@drawable/cp_grid_item_bg</item>
+        <!--网格布局（定位城市，热门城市）item 分隔间隙-->
+        <item name="cpGridItemSpace">@dimen/cp_grid_item_space</item>
+        <!--悬浮栏-->
+        <!--悬浮栏 高度-->
+        <item name="cpSectionHeight">@dimen/cp_section_height</item>
+        <!--悬浮栏 文字大小-->
+        <item name="cpSectionTextSize">@dimen/cp_section_text_size</item>
+        <!--悬浮栏 文字颜色-->
+        <item name="cpSectionTextColor">@color/cp_color_gray</item>
+        <!--悬浮栏 背景颜色-->
+        <item name="cpSectionBackground">@color/cp_color_section_bg</item>
+        <!--右侧字母索引-->
+        <!--右侧字母索引 文字大小-->
+        <item name="cpIndexBarTextSize">@dimen/cp_index_bar_text_size</item>
+        <!--右侧字母索引 未被选中时文字颜色-->
+        <item name="cpIndexBarNormalTextColor">@color/cp_color_gray</item>
+        <!--右侧字母索引 被选中时文字颜色-->
+        <item name="cpIndexBarSelectedTextColor">@color/cp_color_gray_dark</item>
+        <!--特写布局 悬浮窗选中后显示-->
+        <!--特写布局 宽度-->
+        <item name="cpOverlayWidth">@dimen/cp_overlay_width</item>
+        <!--特写布局 高度-->
+        <item name="cpOverlayHeight">@dimen/cp_overlay_height</item>
+        <!--特写布局 文字大小-->
+        <item name="cpOverlayTextSize">@dimen/cp_overlay_text_size</item>
+        <!--特写布局 文字颜色-->
+        <item name="cpOverlayTextColor">@android:color/white</item>
+        <!--特写布局 背景颜色-->
+        <item name="cpOverlayBackground">@drawable/cp_overlay_bg</item>
+    </style>
+</resources>
