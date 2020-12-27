@@ -3,6 +3,7 @@ package com.jl.city_picker.db;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.text.TextUtils;
 
 
 import com.jl.city_picker.model.City;
@@ -36,10 +37,12 @@ public class DBManager {
 
     private void copyDBFile() {
         //老版本数据库
-        File file_old = mContext.getApplicationContext().getDatabasePath(DBConfig.DB_NAME_Old);
-        //如果旧版数据库存在，则删除
-        if (file_old.exists()) {
-            file_old.delete();
+        if (!TextUtils.isEmpty(DBConfig.DB_NAME_Old)) {
+            File file_old = mContext.getApplicationContext().getDatabasePath(DBConfig.DB_NAME_Old);
+            //如果旧版数据库存在，则删除
+            if (file_old.exists()) {
+                file_old.delete();
+            }
         }
         //新版本数据库
         file_new = mContext.getApplicationContext().getDatabasePath(DBConfig.DB_NAME_New);
@@ -68,7 +71,7 @@ public class DBManager {
         List<City> result = new ArrayList<>();
         if (file_new != null && file_new.exists()) {
             SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(file_new.getAbsolutePath(), null);
-            Cursor cursor = db.rawQuery("select * from " + DBConfig.TABLE_NAME +" ORDER BY c_pinyin ASC", null);
+            Cursor cursor = db.rawQuery("select * from " + DBConfig.TABLE_NAME + " ORDER BY c_pinyin ASC", null);
             City city;
             while (cursor.moveToNext()) {
                 String name = cursor.getString(cursor.getColumnIndex(DBConfig.COLUMN_C_NAME));
@@ -91,7 +94,7 @@ public class DBManager {
         if (file_new != null && file_new.exists()) {
             String sql = "select * from " + DBConfig.TABLE_NAME + " where "
                     + DBConfig.COLUMN_C_NAME + " like ? " + "or "
-                    + DBConfig.COLUMN_C_PINYIN + " like ? "+" ORDER BY c_pinyin ASC";
+                    + DBConfig.COLUMN_C_PINYIN + " like ? " + " ORDER BY c_pinyin ASC";
             SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(file_new.getAbsolutePath(), null);
             Cursor cursor = db.rawQuery(sql, new String[]{"%" + keyword + "%", keyword + "%"});
 
